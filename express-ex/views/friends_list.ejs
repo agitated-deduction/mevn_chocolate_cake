@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8">
+
+	</head>
+	<body>
+		<h1>Friends List</h1>
+		<ul>
+			<% for (let i = 0; i < friends.length; i++){%>
+			<li><%= friends[i].name%>: <%=friends[i].email%></li>
+			<%}%>
+		</ul>
+		<a href = "/web/friends/new">등록</a>
+	</body>
+
+</html>

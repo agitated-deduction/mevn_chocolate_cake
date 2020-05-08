@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset ="UTF-8">
+		<title>AT</title>
+		<style>
+			#selected{
+				border:1px;
+				margin:10px;
+				height:250px;
+			}
+			#product-list{
+				margin: 10px;
+			}
+			#product-list li{
+				float: left;
+			}
+			#product-list li .sub-imgs{
+				 width: 100px;
+            	height: 100px;
+			}
+			#selected-img{
+				float: left;
+				width: 200px;
+				height:250px;
+			}
+
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id = "selected">
+		<img id = "selected-img" src = "./images/finn.png" alt = "finn">
+		<h1>finn</h1>
+		<p>asdfsdjfjsdklf dslkfjlkds jflkdsjflkdsj fklsdjflkd sjlkf dlskf lksdjkvldfhvhdf vfv jf dklsf lks
+		dklfsjlsdfhlkd jdskj dksdkj  df sdfkdjdfs  df jdkdksd jfsde wbfiu kcx sd f kj
+		dsf dks fskdfjksdjdkj dk k e bcxkj i  vi fiosdjk cxi xkbji kr </p>
+		<p>dhfd sdjk q0 o acsa codod voo dvso vd odsvo dso sdv o</p>
+	</div>
+<ul id = "product-list">
+	<li>
+	<img class = "sub-imgs" src = "./images/finn.png" alt = "finn">
+	</li>
+	<li>
+	<img class = "sub-imgs" src = "./images/jake.png" alt = "jake">
+	</li>
+	<li>
+	<img class = "sub-imgs" src = "./images/pb.png" alt = "pb">
+	</li>
+	<li>
+	<img class = "sub-imgs" src = "./images/prismo.png" alt = "prismo">
+</li>
+</ul>
+<input type = "text" id = "keyword"><button id = "btn-search">검색</button>
+	
+
+	</body>
+	<script>
+		/*window.addEventListener("load", function(event){
+			var products = document.getElementsByClassName("sub-imgs");
+			//for var product in products:
+			for(var i = 0; i < products.length; i++){
+				var product = products[i];
+				product.addEventListener("click",function(event){
+					var ev = event.target;
+					var mainImg = document.getElementById("selected-img");
+					mainImg.setAttribute("src", ev.getAttribute("src"))
+					mainImg.setAttribute("alt", ev.getAttribute("alt"))
+
+					var mainTitle = document.querySelector("#selected > h1");
+					mainTitle.innerText= ev.getAttribute("alt");
+				});
+			}
+
+			var key = document.getElementById("keyword");
+			key.addEventListener("keyup", function(event){
+				var btn= document.getElementById("btn-search");
+				btn.innerText = event.target.value+" 검색";
+			})
+		});*/
+		function changePic(event){
+			var ev = $(event.target);
+			var mainImg = $("#selected-img");
+			mainImg.attr("src",ev.attr("src"));
+			mainImg.attr("alt",ev.attr("alt"));
+
+			var mainTitle = $("#selected>h1");
+			mainTitle.text(ev.attr("alt"));
+		}
+		function changeBtn(event){
+			var btn = $("#btn-search");
+			//btn.text($(event.target.value)+"검색");
+			btn.text($(event.target).val()+"검색");
+		}
+		$(document).ready(function(event){
+			var products = $(".sub-imgs");
+			for(var i = 0; i < products.length; i++){
+				var product = products[i];
+				$(product).on("click", changePic);
+			}
+			$("#keyword").on("keyup", changeBtn);
+		});
+	</script>
+</html>

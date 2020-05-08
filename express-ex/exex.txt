@@ -1,0 +1,17 @@
+npm init
+[enter]
+[enter]
+Simple Express App
+app.js
+[enter]
+[enter] 저장소!!헐 어케하는지 학원에서 안알려줌 이따 찾아봐야지
+nodejs
+deti
+[enter]
+[enter]
+
+package.json 생김
+
+npm install express --save
+node_modules dir 생김
+다른 사람한테 넘길때는 node_modules 를 지우고 보냄!! 받은 사람이 다시 설치 하기 용량이 큼.
